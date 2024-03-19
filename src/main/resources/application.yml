@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: chaos-monkey
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/kkj?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: KKJ
+    password: whwkrwk01
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      dialect: org.hibernate.dialect.MySQL8InnoDBDialect
+
+#logging:
+#  level:
+#    org.hibernate.SQL: info
+
+management:
+  endpoint:
+    chaos monkey:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info, chaosmonkey
+server:
+  port: 8101

@@ -1,0 +1,98 @@
+PT샵 API
+1. 계정(CRUD)
+ - 트레이너, 회원
+ - 권한
+ - 정보(PT 횟수, 개인정보)
+
+2. 회원 채팅방(socket)
+ - 톡 개념
+
+3. 공지(CRUD)
+ - 게시글 및 알림
+
+4. 예약(CRUD)
+ - 트레이너 시간 조회
+ - 트레이너 시간 예약,취소
+
+5. 출퇴근 체크/캘린더
+ - GPS 또는 RQ을 통한 출근 확인
+ - 집에서 현재 헬스장 인원 확인
+ - 년/월/주 간 출근 리스트
+
+6. 회원 일지(CRUD)
+ - 오늘 어떤 운동을 했고 몇 개 했고 등...
+ - 운동 영상 등록
+
+7. 운동 타이머 제공
+ - 운동 진행 도움용 타이머 기능
+
+
+////////////////////////////
+계정, 톡방, 공지, 예약, 출퇴근/캘린더, 일지, 타이머
+
+[TABLE]
+USER(회원계정)
+USERNO(PK)
+MANAGERNO(FK, MANAGER)
+LEVEL(FK, LEVEL)
+USERID(UN)
+USERPW(NOT)
+USERNAME(NOT)
+USERNICKNAME(UN)
+TRAINING(NOT)
+
+MANAGER(트레이너)
+MANAGERNO(PK)
+LEVEL(FK, LEVEL)
+MANAGERID(UN)
+MANAGERNAME(NOT)
+MANAGERPW(NOT)
+MANAGERNICKNAME(UN)
+
+
+//LEVEL(권한)
+//LEVELNO(PK)
+//LEVELSTEP(UN,NOT)
+//LEVELNAME(UN,NOT)
+
+
+BOARD(게시판)
+BOARDNO(PK)
+USERNO(FK,USER)
+LEVEL(FK,LEVEL)
+BOARDTITLE(NOT)
+BOARDCONTENTS(NOT)
+
+
+
+RESERVATION(예약)
+
+
+
+(일지)
+
+
+
+(캘린더)
+
+
+
+
+
+user
+로그인
+로그아웃
+회원가입
+정보조회
+정보수정
+탈퇴
+아이디중복여부
+닉네임중복여부
+가입중복여부
+패스워드암호화
+출쳌
+
+
+
+
+
